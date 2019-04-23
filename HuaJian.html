@@ -1,0 +1,339 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/huajian.css">
+    <title>cfx花间</title>
+</head>
+<body>
+    <!-- 头部 -->
+    <div class="head">
+        <div class="container">
+            <div class="head_d1">
+                <span>在线时间  8：30~21：00</span>
+                <span class="head_s1">欢迎访问花间在线商城~</span>
+            </div>
+            <div class="head_d2">
+                <a href="#"><img src="img/fangdajing.png" alt=""></a>
+                <a href="#"><img src="img/user.png" alt=""></a>
+                <a href="#"><img src="img/shopping.png" alt=""></a>
+            </div>
+        </div>
+        <div class="head_d3">
+            <div class="head_d4">
+                <img src="img/logo1.png" alt="">
+            </div>
+            <div class="head_d5">
+                <a href="HuaJian.html">商城首页</a>
+                <a href="Allgoods.html">所有商品</a>
+                <a href="Pm.html">支付方式</a>
+                <a href="about.html">关于花语</a>
+                <a href="Under.html">线下花店</a>                          
+            </div>
+        </div>
+        <div class="head_d6">
+            <img style="opacity: 1;" src="img/banner.jpg" alt="">
+            <img style="opacity: 0;" src="img/banner2.jpg" alt="">
+            <p class="font">HeQinLan</p>
+            <script>
+                const lil=document.querySelectorAll(".head_d6 img");
+                let len=lil.length,
+                    index=1;
+                let time=setInterval(()=>{
+                    for(let i=0;i<len;i++){
+                        lil[i].style.cssText="opacity:0";
+                        lil[index].style.cssText="opacity:1;z-index:10;";
+                    }
+                    index++;
+                    if(index==len){
+                        index=0;
+                    }
+                },3000)
+            </script>
+        </div>
+        <!-- content -->
+        <div class="content">
+            <div class="content_d1" id="content_d1">
+                <img src="img/bigPic2.jpg" alt="">
+            </div>
+            <div class="content_d2" id="content_d2">
+                <img src="img/bigPic1.jpg" alt="">
+            </div>
+        </div>
+        <div class="content2">
+            <div class="content2_d1">今日上新</div>
+            <div class="content2_d2">New product</div>
+            <a href="#">+ 查看更多</a>
+        </div>
+        <div class="content3">
+            <ul class="content3_u1" id="content3_u1">
+                <li>
+                    <a href="#">
+                        <img src="img/plant2.jpg" alt="" alt="" class="cu-img">
+                    </a>
+                    <p class="name">植物花艺002</p>
+                    <p class="price">￥360</p>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="img/plant4.jpg" alt="" alt="" class="cu-img">
+                    </a>
+                    <p class="name">植物花艺004</p>
+                    <p class="price">￥300</p>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="img/plant7.jpg" alt="" alt="" class="cu-img">
+                    </a>
+                    <p class="name">植物花艺007</p>
+                    <p class="price">￥520</p>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="img/plant8.jpg" alt="" class="cu-img">
+                    </a>
+                    <p class="name">植物花艺008</p>
+                    <p class="price">￥380</p>
+                </li>
+            </ul>
+        </div>
+        <div class="content4">
+            <div class="content4_d1">限时促销</div>
+            <div class="content4_d2">sales promotion</div>
+            <a href="#">+查看更多</a>
+        </div>
+        <div class="content5">
+            <div class="content5_d1">
+                <img src="img/sales1.jpg" alt="">
+                <div class="content5_d2">
+                    <span id="hour">00</span> 时 <span id="min">00</span> 分 <span id="sen">00</span> 秒
+                </div>
+            </div>
+            <div class="content5_d3">
+                <div class="content5_d4">
+                    <span id="hour1">00</span> 时 <span id="min1">00</span> 分 <span id="sen1">00</span> 秒
+                </div>
+                <img src="img/sales2.jpg" alt="">
+            </div>
+            <script>
+                window.onload = function(){
+                    var iTotalTime  = 23 + 8;//每天8点距离第二天8的时间
+                    var oHour = document.getElementById("hour");
+                    var oHour1 = document.getElementById("hour1");
+                    var oMin = document.getElementById("min");
+                    var oMin1 = document.getElementById("min1");
+                    var oSen = document.getElementById("sen");
+                    var oSen1 = document.getElementById("sen1");
+                    var iDin = 59;
+                    //一秒执行一次
+                    setInterval(function(){
+                        var dDate = new Date();//获得本地时间    
+                        var getMin = 59 - dDate.getMinutes();
+                        var getSen = 59 - dDate.getSeconds();
+                        oHour.innerHTML = iTotalTime - dDate.getHours();   
+                        oHour1.innerHTML = iTotalTime - dDate.getHours(); 
+                        oMin.innerHTML  = getMin > 9 ?getMin:"0"+getMin;
+                        oMin1.innerHTML  = getMin > 9 ?getMin:"0"+getMin;
+                        oSen.innerHTML  = getSen > 9 ?getSen:"0"+getSen;
+                        oSen1.innerHTML  = getSen > 9 ?getSen:"0"+getSen;
+                    },1000);
+                }
+            </script>
+        </div>
+        <div class="content6">
+            <img class="content6_i1" src="img/banner3.jpg" alt="">
+            <div class="content6_d1">
+                <img src="img/logo1.png" alt="">
+                <div class="content6_d2">
+                    <p>花间，一家全国连锁店，主要以花艺为主，品种齐全，价格合理，提供24小时网上订购鲜花 礼品服务。16年用心经营，专业成就花店知名品牌，打造市场一流花店。</p>
+                    <p>我们的宗旨：顾客满意才是我们的追求，不断努力力争做您满意的花后。</p>
+                </div>
+            </div>
+            <i>浪漫之花，情系你我!</i>
+        </div>
+        <div class="content7">
+            <div class="content7_d1">装点家园</div>
+            <div class="content7_d2">decorate the homes</div>
+            <a href="#">+查看更多</a>
+        </div>
+        <div class="content8">
+            <ul class="content8_u1">
+                <li>
+                    <a href="#">
+                        <img src="img/plant5.jpg" alt="">
+                    </a>
+                    <p class="name1">植物花艺005</p>
+                    <p class="price1">￥300</p>
+                </li>
+                <li>
+                    <p class="name1">植物花艺001</p>
+                    <p class="price1">￥280</p>
+                    <a href="#">
+                        <img src="img/plant1.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="img/plant3.jpg" alt="">
+                    </a>
+                    <p class="name1">植物花艺003</p>
+                    <p class="price1">#290</p>
+                </li>
+                <li>
+                    <p class="name1">植物花艺006</p>
+                    <p class="price1">￥310</p>
+                    <a href="#">
+                        <img src="img/plant6.jpg" alt="">
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="content9">
+            <div id="content9_1">
+                <div class="content9_d1">
+                    <img src="img/decorate3.jpg" alt="">
+                    <div class="content9_1">
+                        <a href="#">山中花店的活动中，稀有种子如何获得？</a>
+                        <p>发布日期：2019—4—19</p>
+                        <p>从一九四七年巴黎蒙田大街30号New Look的展出开始，Dior就成为高级 女装的代名词, 继承了法国高级女装的传统，始终保持华丽的设计路线， 做工精细，迎合上流社会成熟女性的审...</p>
+                    </div>  
+                </div>
+                <div class="content9_d2">
+                    <img src="img/decorate4.jpg" alt="">
+                    <div class="content9_2">
+                        <a href="#">天气干燥，花店老板推荐制氧绿植</a>
+                        <p>发布日期：2019—4—21</p>
+                        <p>秋天的拉萨，天气比较干燥，这个时候在家里养一些可以制造氧气 和水分的植物大有好处。记者走访多个花店后发现，很多店老板都 会同时提到一种制氧植物——红豆杉。红豆杉有“植物增氧机”之称...</p>
+                    </div>  
+                </div>
+            </div>
+            <div class="content9_d3">
+                <img src="img/decorate2.jpg" alt="">
+            </div>   
+        </div>
+        <div class="content10">
+            <div class="content10_d1" id="content10_d1">
+                <img src="img/serive1.png" alt="">
+                <div class="content10_d5">
+                    <p class="content10_p1">满1000元全国包邮</p>
+                    <p class="content10_p2">全场订单满1000全国包邮</p>
+                </div>
+            </div>
+            <div class="content10_d2" id="content10_d2">
+                <img src="img/serive2.png" alt="">
+                <div class="content10_d5">
+                    <p class="content10_p1">下单送精美礼品</p>
+                    <p class="content10_p2">本店购买任意商品，送精美礼品</p>
+                </div>
+            </div>
+            <div class="content10_d3" id="content10_d3">
+                <img src="img/serive3.png" alt="">
+                <div class="content10_d5">
+                    <p class="content10_p1">贴心的售后服务</p>
+                    <p class="content10_p2">7×24小时售后随时为您服务</p>
+                </div>
+            </div>
+            <div class="content10_d4" id="content10_d4">
+                <img src="img/serive4.png" alt="">
+                <div class="content10_d5">
+                    <p class="content10_p1">店铺优惠</p>
+                    <p class="content10_p2">每日整点可领取限量优惠劵</p>
+                </div>
+            </div>
+        </div>
+        <!-- footer -->
+        <div class="footer1">
+            <div class="footer1_d1">
+                <div class="footer1_d11">
+                    <p class="footer1_p1">About Change</p><br>
+                    <p class="footer1_p2">本店商品均为易碎品，非质量问题谢绝退换，如有质量问题，本店承担运费调换</p><br><br><br>
+                    <p class="footer1_p1">Online Payment</p><br>
+                    <p>
+                        <img class="footer1_d1i1" src="img/pay2.png" alt="">
+                        <img class="footer1_d1i2" src="img/pay1.png" alt="">
+                        <img class="footer1_d1i2" src="img/pay3.png" alt="">
+                    </p>
+                </div>
+                <div class="footer1_d12">
+                    <p class="footer1_p1">Service</p><br>
+                    <p class="footer1_p2">消費者保障服务<br>七天无理由退款<br>假一赔三</p><br><br><br>
+                    <p class="footer1_p1">Online Payment</p><br>
+                    <p class="footer1_p2">非质量问题谢绝退换，如有质量问题，本店承担运费调换</p>
+                </div>
+                <div class="footer1_d13">
+                    <p class="footer1_p1">About Color</p><br>
+                    <p class="footer1_p2">本店商品均为易碎品，非质量问题谢绝退换，如有质量问题，本店承担运费调换</p><br><br><br>
+                    <p class="footer1_p1">Wechat</p><br>
+                    <p class="footer1_p2">非质量问题谢绝退换，如有质量问题，本店承担运费调换</p>
+                </div>
+                <div class="footer1_d14">
+                    <img src="img/logo1.png" alt=""><br><br><br><br>
+                    <p class="footer1_p1">Social App</p>
+                </div>
+            </div>
+            <div class="footer2_d2">
+                <div class="footer2_d21">
+                    <p class="footer2_p1">关于产品</p>
+                    <p class="footer2_p2">about products</p>
+                    <p class="footer2_p3">所有商品均为实物拍摄，各浏览器显示有所不同，对此要求高的买家慎拍</p>
+                </div>
+                <div class="footer2_d22">
+                    <p class="footer2_p1">关于退货</p>
+                    <p class="footer2_p2">about return</p>
+                    <p class="footer2_p3">本店商品均为易碎品，非质量问题谢绝退换，如有质量问题，本店承担运费调换</p>
+                </div>
+                <div class="footer2_d23">
+                    <p class="footer2_p1">关于运输</p>
+                    <p class="footer2_p2">about transport</p>
+                    <p class="footer2_p3">本店商品均为易碎品，非质量问题谢绝退换，如有质量问题，本店承担运费调换</p>
+                </div>
+                <div class="footer2_d24">
+                    <p class="footer2_p1">扫码关注</p>
+                    <p class="footer2_p2">about attention</p>
+                    <img src="img/erweima.jpg" alt="">
+                    <p class="footer2_p3">搜索微信号：HUAJIAN</p>
+                </div>
+            </div>
+            <div class="footer3">
+                Copyright © 2010-2019花间文化传播有限公司 All rights reserved
+            </div>
+        </div>
+    </div>
+    <script>
+        // let content_d1=document.getElementById('content_d1');
+        // let content_d2=document.getElementById('content_d2');
+        window.onscroll=()=>{
+            let scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+            // 左div id=content_d1  右div id=content_d2
+            console.log(scrollTop)
+            if(scrollTop>250){
+                content_d1.style.marginLeft='0';
+                content_d2.style.marginRight='0';
+            }
+            if(scrollTop>550){
+                // content3.style.marginLeft="0"
+                content3_u1.style.marginTop='0';
+            }
+            if(scrollTop>2800){
+                content9_1.style.marginLeft='0';
+            }
+            if(scrollTop>3200){
+                content10_d1.style.marginTop='0';
+            }
+            if(scrollTop>3200){
+                content10_d2.style.marginTop='0';
+            }
+            if(scrollTop>3200){
+                content10_d3.style.marginTop='0';
+            }
+            if(scrollTop>3200){
+                content10_d4.style.marginTop='0';
+            }
+        }
+    </script>
+</body>
+</html>
